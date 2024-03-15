@@ -9,9 +9,6 @@
  * 输入: [1,2,3,4] 输出: false
  */
 
-const nums1 = [1, 2, 3, 1]
-const nums2 = [1, 2, 3, 4]
-
 // const hasDuplicate = (nums) => {
 //   // 使用 Map
 //   let map = new Map()
@@ -38,5 +35,10 @@ const hasDuplicate = (nums) => {
   return false
 }
 
-console.log(hasDuplicate(nums1))
-console.log(hasDuplicate(nums2))
+// run
+
+const nums1 = [1, 2, 3, 1]
+const nums2 = [1, 2, 3, 4]
+
+console.log(hasDuplicate(nums1)) // true
+console.log(hasDuplicate(nums2)) // false
