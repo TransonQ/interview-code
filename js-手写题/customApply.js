@@ -1,20 +1,30 @@
 Function.prototype.customApply = function (context, args) {
   // 1. 检查this是否是函数
+  // 2. 检查context是否存在,否则设置为window
+  // 3. 创建一个临时属性
+  // 4. 将this赋值给临时id
+  // 5. 执行函数
+  // 6. 删除临时属性
+  // 7. 返回执行结果
+
   if (typeof this !== 'function') {
     throw new TypeError('Error')
   }
-  // 2. 创建一个临时属性
+
+  context = context || window
+
   const tempProp = Symbol('tempId')
-  // 3. 将this赋值给临时id
+
   context[tempProp] = this
-  // 4. 执行函数
+
   const result = context[tempProp](...args)
-  // 5. 删除临时属性
+
   delete context[tempProp]
-  // 6. 返回执行结果
+
   return result
 }
 
+// 测试用例
 function greet(name) {
   return 'Hello, ' + name + "! I'm " + this.job
 }
