@@ -6,8 +6,6 @@
 
 // 思路：哈希表
 
-
-
 const firstUniqChar = function (s) {
   const map = new Map()
 
