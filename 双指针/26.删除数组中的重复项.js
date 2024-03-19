@@ -19,6 +19,7 @@
 解释：函数应该返回新的长度 5 ， 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4 。不需要考虑数组中超出新长度后面的元素。
  */
 
+// 核心: 非严格递增排列 的数组->一定是从小到大排布,只是个数不定
 const removeDuplicates = function (nums) {
   let index = 0
   for (let i = 1; i < nums.length; i++) {
@@ -30,5 +31,5 @@ const removeDuplicates = function (nums) {
   return index + 1
 }
 
-console.log(removeDuplicates([1, 1, 2]))
-console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]))
+console.log(removeDuplicates([1, 1, 2])) //2
+console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4])) //5
