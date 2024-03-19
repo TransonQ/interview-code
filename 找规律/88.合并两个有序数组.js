@@ -53,6 +53,11 @@ const mergeList = (nums1, m, nums2, n) => {
     nums1[i] = arr[i]
   }
 }
+let arr1 = [1, 2, 3, 0, 0, 0]
+let arr2 = [1]
 
-console.log(mergeList([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3))
-console.log(mergeList([1], 1, [], 0))
+mergeList(arr1, 3, [2, 5, 6], 3)
+mergeList(arr2, 1, [], 0)
+
+console.log(arr1)
+console.log(arr2)
