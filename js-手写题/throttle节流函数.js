@@ -5,10 +5,21 @@
 function throttle(fn, delay) {
   let mark = Date.now()
 
+  // return (...args) => {
+  //   if (Date.now() - mark >= delay) {
+  //     fn(...args)
+  //     mark = Date.now() // 重新执行后更新 mark 基准值
+  //   }
+  // }
+
+  let inThrottle
+
   return (...args) => {
-    if (Date.now() - mark >= delay) {
-      fn(...args)
-      mark = Date.now() // 重新执行后更新 mark 基准值
+    if (!inThrottle) {
+      func(...args)
+      inThrottle = true
+
+      setTimeout(() => (inThrottle = false), limit)
     }
   }
 }
