@@ -13,9 +13,11 @@ const customNew = (fn, ...args) => {
 }
 
 // 用例
-function Person(name, age) {
-  this.name = name
-  this.age = age
+class Person {
+  constructor(name, age) {
+    this.name = name
+    this.age = age
+  }
 }
 
 const john = customNew(Person, 'John', 18)
