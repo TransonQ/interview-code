@@ -10,7 +10,7 @@ const deepClone = (obj) => {
   const newObj = Array.isArray(obj) ? [] : {}
 
   for (const key in obj) {
-    if (obj.hasOwnProperty(key)) {
+    if (Object.hasOwnProperty.call(obj, key)) {
       newObj[key] =
         typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key]
     }
