@@ -22,26 +22,42 @@ class TreeNode {
 }
 
 function maxDepth(root) {
+  // if (!root) return 0
+  // const leftDepth = maxDepth(root.left)
+  // const rightDepth = maxDepth(root.right)
+  // return Math.max(leftDepth, rightDepth) + 1
+
+  // 解法二:
   if (!root) return 0
+  let res = 1
+  dfs(root, res)
+  // 工具函数
+  function dfs(node, depth) {
+    if (!node) return
+    if (node.left) dfs(node.left, depth + 1)
+    if (node.right) dfs(node.right, depth + 1)
+    res = Math.max(res, depth)
+  }
 
-  const leftDepth = maxDepth(root.left)
-  const rightDepth = maxDepth(root.right)
-
-  return Math.max(leftDepth, rightDepth) + 1
+  return res
 }
 
 // 创建一个简单的二叉树
-/** 
+/**
  *       1
  *      / \
  *     2   3
- *    / \
- *   4   5
+ *    / \   \
+ *   4   5   6
+ *            \
+ *             7
  */
 const root = new TreeNode(1)
 root.left = new TreeNode(2)
 root.right = new TreeNode(3)
 root.left.left = new TreeNode(4)
 root.left.right = new TreeNode(5)
+root.right.right = new TreeNode(6)
+root.right.right.right = new TreeNode(7)
 
 console.log(maxDepth(root)) // 3
