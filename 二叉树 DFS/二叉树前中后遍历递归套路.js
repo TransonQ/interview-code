@@ -1,8 +1,11 @@
 /** 
  * 二叉树前中后遍历套路详解
-        A
-    B       C
-  D   E        F
+    A
+   / \
+  B   C
+ / \   \
+D   E   F
+
  */
 
 class TreeNode {
@@ -68,4 +71,3 @@ const postorderTraversal = (root) => {
   return res
 }
 console.log(postorderTraversal(root)) //  D E B F C A
-
